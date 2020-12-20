@@ -7,7 +7,7 @@ class BaseController {
 
   async get(req, res, next) {
     try {
-      const result = this.service.get();
+      const result = await this.service.get();
 
       return res.json(result);
     } catch (err) {
@@ -52,13 +52,13 @@ class BaseController {
     }
   }
 
-  async delete(req, res, next) {
+  async del(req, res, next) {
     try {
       const { id } = req.params;
 
-      await this.service.delete({ id });
+      await this.service.del({ id });
 
-      return res.status(204);
+      return res.status(204).end();
     } catch (err) {
       return res.status(400);
     }

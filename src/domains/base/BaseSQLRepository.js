@@ -39,10 +39,12 @@ class BaseSQLRepository {
     return updated;
   }
 
-  async delete({ id, tableName = this.tableName }) {
-    await this.dbConnector(tableName)
+  async del({ id, tableName = this.tableName }) {
+    const deleted = await this.dbConnector(tableName)
       .where('id', id)
       .del();
+
+    return deleted;
   }
 }
 

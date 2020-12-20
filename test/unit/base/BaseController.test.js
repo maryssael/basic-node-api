@@ -13,7 +13,7 @@ describe('BaseController', () => {
       getById: jest.fn().mockResolvedValue(),
       create: jest.fn().mockResolvedValue(),
       update: jest.fn().mockResolvedValue(),
-      delete: jest.fn().mockResolvedValue()
+      del: jest.fn().mockResolvedValue()
     };
 
     req = {
@@ -27,10 +27,10 @@ describe('BaseController', () => {
     };
 
     res = {
-      status: jest.fn().mockResolvedValue(res),
-      json: jest.fn().mockResolvedValue(),
-      send: jest.fn().mockResolvedValue(),
-      end: jest.fn().mockResolvedValue()
+      status: jest.fn().mockReturnValue(res),
+      json: jest.fn().mockReturnValue(),
+      send: jest.fn().mockReturnValue(),
+      end: jest.fn().mockReturnValue()
     };
 
     controller = new BaseController({ service });
@@ -80,12 +80,12 @@ describe('BaseController', () => {
     });
   });
 
-  describe('delete', () => {
-    it('Should call service.delete', async () => {
-      await controller.delete(req, res);
+  describe('del', () => {
+    it('Should call service.del', async () => {
+      await controller.del(req, res);
 
-      expect(service.delete).toHaveBeenCalledTimes(1);
-      expect(service.delete).toHaveBeenCalledWith({ id: req.params.id });
+      expect(service.del).toHaveBeenCalledTimes(1);
+      expect(service.del).toHaveBeenCalledWith({ id: req.params.id });
       expect(res.status).toHaveBeenCalledTimes(1);
       expect(res.status).toHaveBeenCalledWith(204);
     });

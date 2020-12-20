@@ -10,7 +10,7 @@ describe('BaseService', () => {
       getById: jest.fn().mockResolvedValue(),
       create: jest.fn().mockResolvedValue(),
       update: jest.fn().mockResolvedValue(),
-      delete: jest.fn().mockResolvedValue()
+      del: jest.fn().mockResolvedValue()
     };
 
     service = new BaseService({ repository });
@@ -61,14 +61,14 @@ describe('BaseService', () => {
     });
   });
 
-  describe('delete', () => {
-    it('Should call repository.delete', async () => {
+  describe('del', () => {
+    it('Should call repository.del', async () => {
       const id = 2;
 
-      await service.delete({ id });
+      await service.del({ id });
 
-      expect(repository.delete).toHaveBeenCalledTimes(1);
-      expect(repository.delete).toHaveBeenCalledWith({ id });
+      expect(repository.del).toHaveBeenCalledTimes(1);
+      expect(repository.del).toHaveBeenCalledWith({ id });
     });
   });
 });

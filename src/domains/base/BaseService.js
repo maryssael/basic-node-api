@@ -6,7 +6,7 @@ class BaseService {
   }
 
   async get() {
-    return this.repository.get();
+    return this.repository.get({});
   }
 
   async getById({ id }) {
@@ -21,8 +21,8 @@ class BaseService {
     return this.repository.update({ id, data });
   }
 
-  async delete({ id }) {
-    return this.repository.delete({ id });
+  async del({ id }) {
+    return this.repository.del({ id });
   }
 }
 

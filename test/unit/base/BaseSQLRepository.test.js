@@ -101,7 +101,7 @@ describe('BaseSQLRepository', () => {
     });
   });
 
-  describe('delete', () => {
+  describe('del', () => {
     it('Should delete row specified by id', async () => {
       const id = 2;
       const dbResponse = 1;
@@ -114,7 +114,7 @@ describe('BaseSQLRepository', () => {
         query.response(dbResponse);
       });
 
-      await repository.delete({ id });
+      await repository.del({ id });
     });
   });
 });
