@@ -1,21 +1,12 @@
-const knex = require('knex');
-const mockDb = require('mock-knex');
-
 const BaseSQLRepository = require('../../../src/domains/base/BaseSQLRepository');
-
-const db = knex({
-  client: 'pg'
-});
-
-mockDb.mock(db);
-const tracker = mockDb.getTracker();
+const { mockDb, tracker } = require('../../helper/knex');
 
 let repository;
 
 describe('BaseSQLRepository', () => {
   beforeEach(() => {
     repository = new BaseSQLRepository({
-      dbConnector: db,
+      dbConnector: mockDb,
       tableName: 'tableName'
     });
 
