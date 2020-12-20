@@ -2,7 +2,7 @@ const Repository = require('../BaseSQLRepository');
 const Service = require('../BaseService');
 const Controller = require('../BaseController');
 
-const dbConnector = require('../../../db/index');
+const dbConnector = require('../../../db/knex');
 
 function getBaseRepository(params = {}) {
   return new Repository({
