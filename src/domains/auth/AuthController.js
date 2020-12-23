@@ -1,4 +1,4 @@
-const BaseController = require('../base/BaseController');
+const BaseController = require('../../shared/base/BaseController');
 
 class AuthController extends BaseController {
   async signup(req, res, next) {

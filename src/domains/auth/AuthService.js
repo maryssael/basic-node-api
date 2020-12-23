@@ -2,7 +2,7 @@ require('dotenv').config();
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
-const BaseService = require('../base/BaseService');
+const BaseService = require('../../shared/base/BaseService');
 
 class AuthService extends BaseService {
   async signup({ data }) {

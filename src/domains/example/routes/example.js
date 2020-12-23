@@ -1,39 +1,40 @@
 const express = require('express');
 
 const router = express.Router();
-const factory = require('../factories/base');
-const { validateJwt } = require('../../../shared/middlewares/auth');
 
-const controller = factory.getBaseController();
+const { validateJwt } = require('../../../shared/middlewares/auth');
+const factory = require('../factories/example');
+
+const exampleController = factory.getExampleController();
 
 router.get(
   '/',
   [validateJwt],
-  (...args) => controller.get(...args)
+  (...args) => exampleController.get(...args)
 );
 
 router.get(
   '/:id',
   [validateJwt],
-  (...args) => controller.getById(...args)
+  (...args) => exampleController.getById(...args)
 );
 
 router.post(
   '/',
   [validateJwt],
-  (...args) => controller.create(...args)
+  (...args) => exampleController.create(...args)
 );
 
 router.put(
   '/:id',
   [validateJwt],
-  (...args) => controller.update(...args)
+  (...args) => exampleController.update(...args)
 );
 
 router.delete(
   '/:id',
   [validateJwt],
-  (...args) => controller.del(...args)
+  (...args) => exampleController.del(...args)
 );
 
 module.exports = router;

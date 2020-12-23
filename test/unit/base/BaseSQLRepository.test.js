@@ -1,4 +1,4 @@
-const BaseSQLRepository = require('../../../src/domains/base/BaseSQLRepository');
+const BaseSQLRepository = require('../../../src/shared/base/BaseSQLRepository');
 const { mockDb, tracker } = require('../../helper/knex');
 
 let repository;

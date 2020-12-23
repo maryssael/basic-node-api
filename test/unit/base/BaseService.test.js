@@ -1,4 +1,4 @@
-const BaseService = require('../../../src/domains/base/BaseService');
+const BaseService = require('../../../src/shared/base/BaseService');
 
 let service;
 let repository;

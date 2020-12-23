@@ -1,4 +1,4 @@
-const BaseController = require('../../../src/domains/base/BaseController');
+const BaseController = require('../../../src/shared/base/BaseController');
 
 let req;
 let res;

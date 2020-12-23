@@ -1,4 +1,4 @@
-const BaseSQLRepository = require('../base/BaseSQLRepository');
+const BaseSQLRepository = require('../../shared/base/BaseSQLRepository');
 
 class AuthRepository extends BaseSQLRepository {
   async getUserByUsername({ username }) {
