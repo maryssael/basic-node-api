@@ -25,11 +25,8 @@ app.use(cookieParser());
 //   origin: [frontURL]
 // }));
 
-// Endpoints
-app.use('/auth', require('../domains/auth/routes/auth'));
-app.use('/base', require('../domains/base/routes/base'));
+app.use(require('./router'));
 
-// Starting the server
 app.listen(process.env.PORT, () => {
   console.log(`Server is listening on port ${process.env.PORT}`); // eslint-disable-line no-console
 });
