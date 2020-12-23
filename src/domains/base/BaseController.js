@@ -11,7 +11,7 @@ class BaseController {
 
       return res.json(result);
     } catch (err) {
-      return res.status(400);
+      return res.status(400).json(err);
     }
   }
 
@@ -23,7 +23,7 @@ class BaseController {
 
       return res.json(result);
     } catch (err) {
-      return res.status(400);
+      return res.status(400).json(err);
     }
   }
 
@@ -35,7 +35,7 @@ class BaseController {
 
       return res.json(result);
     } catch (err) {
-      return res.status(400);
+      return res.status(400).json(err);
     }
   }
 
@@ -48,7 +48,7 @@ class BaseController {
 
       return res.json(result);
     } catch (err) {
-      return res.status(400);
+      return res.status(400).json(err);
     }
   }
 
@@ -60,7 +60,7 @@ class BaseController {
 
       return res.status(204).end();
     } catch (err) {
-      return res.status(400);
+      return res.status(400).json(err);
     }
   }
 }

@@ -26,6 +26,7 @@ app.use(cookieParser());
 // }));
 
 // Endpoints
+app.use('/auth', require('../domains/auth/routes/auth'));
 app.use('/base', require('../domains/base/routes/base'));
 
 // Starting the server
