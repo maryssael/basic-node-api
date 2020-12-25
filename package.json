@@ -6,7 +6,12 @@
   "scripts": {
     "start": "node ./src/app/index.js",
     "dev": "nodemon ./src/app/index.js",
-    "test": "jest"
+    "test": "jest",
+    "migrations:create": "knex --migrations-directory src/db/migrations migrate:make",
+    "migrations:latest": "knex --migrations-directory src/db/migrations --knexfile src/db/knexfile.js migrate:latest",
+    "migrations:rollback": "knex --migrations-directory src/db/migrations --knexfile src/db/knexfile.js migrate:rollback",
+    "migrations:up": "knex --migrations-directory src/db/migrations --knexfile src/db/knexfile.js migrate:up",
+    "migrations:down": "knex --migrations-directory src/db/migrations --knexfile src/db/knexfile.js migrate:down"
   },
   "repository": {
     "type": "git",

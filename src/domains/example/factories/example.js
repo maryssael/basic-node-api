@@ -7,7 +7,7 @@ const dbConnector = require('../../../db/knex');
 function getExampleRepository(params = {}) {
   return new ExampleRepository({
     dbConnector: params.dbConnector || dbConnector,
-    tableName: params.tableName || 'tbl_test'
+    tableName: params.tableName || 'examples'
   });
 }
 

@@ -2,8 +2,8 @@ require('dotenv').config();
 
 // Server core
 const express = require('express');
-const helmet = require('helmet');
 const morgan = require('morgan');
+const helmet = require('helmet');
 
 // Middlewares
 const bodyParser = require('body-parser');
