@@ -2,20 +2,20 @@ const tableName = 'examples';
 
 const examples = [
   {
-    name: 'Chill Penguin',
-    special: 'Shotgun Ice'
+    first_name: 'Chill',
+    last_name: 'Penguin'
   },
   {
-    name: 'Spark Mandrill',
-    special: 'Electric Spark'
+    first_name: 'Spark',
+    last_name: 'Mandrill'
   },
   {
-    name: 'Armored Armadillo',
-    special: 'Rolling Shield'
+    first_name: 'Armored',
+    last_name: 'Armadillo'
   },
   {
-    name: 'Launch Octopus',
-    special: 'Homing Torpedo'
+    first_name: 'Launch',
+    last_name: 'Octopus'
   }
 ];
 
@@ -25,11 +25,11 @@ function migrateUp(knex) {
 
 function migrateDown(knex) {
   return knex(tableName)
-    .whereIn('name', [
-      'Chill Penguin',
-      'Spark Mandrill',
-      'Armored Armadillo',
-      'Launch Octopus'
+    .whereIn('first_name', [
+      'Chill',
+      'Spark',
+      'Armored',
+      'Launch'
     ])
     .del();
 }
