@@ -1,8 +1,12 @@
+const defaultErrorHandler = require('../helper/errors/errorHandler');
+
 class BaseController {
   constructor({
-    service
+    service,
+    errorHandler
   }) {
     this.service = service;
+    this.errorHandler = errorHandler || defaultErrorHandler;
   }
 
   async get(req, res, next) {
@@ -11,7 +15,7 @@ class BaseController {
 
       return res.json(result);
     } catch (err) {
-      return res.status(400).json(err);
+      return this.errorHandler(err, req, res, next);
     }
   }
 
@@ -23,7 +27,7 @@ class BaseController {
 
       return res.json(result);
     } catch (err) {
-      return res.status(400).json(err);
+      return this.errorHandler(err, req, res, next);
     }
   }
 
@@ -35,7 +39,7 @@ class BaseController {
 
       return res.json(result);
     } catch (err) {
-      return res.status(400).json(err);
+      return this.errorHandler(err, req, res, next);
     }
   }
 
@@ -48,7 +52,7 @@ class BaseController {
 
       return res.json(result);
     } catch (err) {
-      return res.status(400).json(err);
+      return this.errorHandler(err, req, res, next);
     }
   }
 
@@ -60,7 +64,7 @@ class BaseController {
 
       return res.status(204).end();
     } catch (err) {
-      return res.status(400).json(err);
+      return this.errorHandler(err, req, res, next);
     }
   }
 }

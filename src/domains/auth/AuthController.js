@@ -9,7 +9,7 @@ class AuthController extends BaseController {
 
       return res.status(201).json(result);
     } catch (err) {
-      return res.status(400).send(err.message);
+      return this.errorHandler(err, req, res, next);
     }
   }
 
@@ -21,7 +21,7 @@ class AuthController extends BaseController {
 
       return res.json(result);
     } catch (err) {
-      return res.status(400).send(err.message);
+      return this.errorHandler(err, req, res, next);
     }
   }
 }

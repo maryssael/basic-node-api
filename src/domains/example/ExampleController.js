@@ -1,7 +1,7 @@
 const BaseController = require('../../shared/base/BaseController');
 
 class ExampleController extends BaseController {
-  async exampleMethod(req, res) {
+  async exampleMethod(req, res, next) {
     try {
       const { arg } = req.body;
 
@@ -9,7 +9,7 @@ class ExampleController extends BaseController {
 
       return result;
     } catch (err) {
-      return res.status(500).send(err);
+      return this.errorHandler(err, req, res, next);
     }
   }
 }

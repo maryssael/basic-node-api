@@ -2,6 +2,7 @@ require('dotenv').config();
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
+const errors = require('../../shared/helper/errors/errors');
 const BaseService = require('../../shared/base/BaseService');
 
 class AuthService extends BaseService {
@@ -29,11 +30,11 @@ class AuthService extends BaseService {
     const user = await this.repository.getUserByUsername({ username });
 
     if (!user) {
-      throw new Error('No user found');
+      throw errors.auth.invalidUserInformation();
     }
 
     if (!await bcrypt.compare(password, user.password)) {
-      throw new Error('Not allowed');
+      throw errors.auth.invalidUserInformation();
     }
 
     const jwtPayload = {
