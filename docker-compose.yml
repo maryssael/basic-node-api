@@ -11,10 +11,10 @@ services:
       POSTGRES_PASSWORD: ${DB_PASSWORD}
       POSTGRES_DB: ${DB_NAME}
 
-  app:
-    build: .
-    depends_on:
-      - postgresql
-    ports:
-      - "${PORT}:${PORT}"
-    command: npm run start
+  # app:
+  #   build: .
+  #   depends_on:
+  #     - postgresql
+  #   ports:
+  #     - "${PORT}:${PORT}"
+  #   command: npm run start
