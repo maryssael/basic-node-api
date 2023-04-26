@@ -7,7 +7,7 @@ class ExampleController extends BaseController {
 
       const result = await this.service.exampleMethod(arg);
 
-      return result;
+      return res.json(result);
     } catch (err) {
       return this.errorHandler(err, req, res, next);
     }

@@ -7,11 +7,11 @@
     "start": "node ./src/app/index.js",
     "dev": "nodemon ./src/app/index.js",
     "test": "jest",
-    "migrations:create": "knex --migrations-directory src/db/migrations migrate:make",
-    "migrations:latest": "knex --migrations-directory src/db/migrations --knexfile src/db/knexfile.js migrate:latest",
-    "migrations:rollback": "knex --migrations-directory src/db/migrations --knexfile src/db/knexfile.js migrate:rollback",
-    "migrations:up": "knex --migrations-directory src/db/migrations --knexfile src/db/knexfile.js migrate:up",
-    "migrations:down": "knex --migrations-directory src/db/migrations --knexfile src/db/knexfile.js migrate:down"
+    "migrations:create": "knex --migrations-directory migrations migrate:make",
+    "migrations:latest": "knex --migrations-directory migrations --knexfile src/db/knexfile.js migrate:latest",
+    "migrations:rollback": "knex --migrations-directory migrations --knexfile src/db/knexfile.js migrate:rollback",
+    "migrations:up": "knex --migrations-directory migrations --knexfile src/db/knexfile.js migrate:up",
+    "migrations:down": "knex --migrations-directory migrations --knexfile src/db/knexfile.js migrate:down"
   },
   "repository": {
     "type": "git",
@@ -27,12 +27,13 @@
     "bcrypt": "^5.0.0",
     "body-parser": "^1.19.0",
     "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "helmet": "^4.2.0",
     "joi": "^17.3.0",
-    "jsonwebtoken": "^8.5.1",
-    "knex": "^0.21.13",
+    "jsonwebtoken": "^9.0.0",
+    "knex": "^2.4.2",
     "morgan": "^1.10.0",
     "pg": "^8.5.1"
   },
